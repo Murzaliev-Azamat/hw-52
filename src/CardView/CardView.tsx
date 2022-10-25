@@ -6,7 +6,7 @@ interface CardViewProps {
 }
 
 const CardView: React.FC<CardViewProps> = props => {
-  const cardClass = 'card rank-' + props.rank + ' ' + props.suit;
+  const cardClass = 'card rank-' + props.rank.toLowerCase() + ' ' + props.suit;
   let cardSymbol: string = '';
 
   if (props.suit === 'diams') {
@@ -16,7 +16,7 @@ const CardView: React.FC<CardViewProps> = props => {
   } else if (props.suit === 'hearts') {
     cardSymbol = '♥';
   } else if (props.suit === 'spades') {
-    cardSymbol = '♣';
+    cardSymbol = '♠';
   }
 
   return (

@@ -3,6 +3,7 @@ import './App.css';
 import CardView from "./CardView/CardView";
 import Card from "./lib/Card";
 import CardDeck from "./lib/CardDeck";
+import PokerHand from "./lib/PokerHand";
 
 function App() {
 
@@ -21,6 +22,9 @@ function App() {
     );
   }
 
+  const myHand = new PokerHand(cards);
+  const combination = myHand.getOutcome();
+
   return (
     <div className="App">
       <button onClick={dealCards}>Раздать карты</button>
@@ -29,11 +33,9 @@ function App() {
       <CardView rank={cards[2].rank} suit={cards[2].suit}/>
       <CardView rank={cards[3].rank} suit={cards[3].suit}/>
       <CardView rank={cards[4].rank} suit={cards[4].suit}/>
+      <div>{combination}</div>
     </div>
   );
-
-
-
 }
 
 export default App;
